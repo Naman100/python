@@ -1,0 +1,13 @@
+bookPrice = 24.95
+discount = .40
+sPRest = .75
+spFirst = 3.00
+total = 60
+
+bookamount = (bookPrice-discount) * total
+shipping = sPRest * 59 + spFirst
+
+result = bookamount + shipping
+print "bookprice",bookamount
+print "tshipping",shipping
+print "total",result
