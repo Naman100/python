@@ -1,0 +1,7 @@
+n = input("Please enter the value of n :- ")
+
+list1 = ["Mango","Raspberry","SandhyaPS4","SudarshanWeed","ShreyasBeer","Luffy","Naruto","Deku","Tanjirou"]
+
+for i in range(len(list1)):
+	if len(str(list1[i])) > n:
+		print(list1[i])
