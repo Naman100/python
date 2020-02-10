@@ -1,0 +1,8 @@
+def print_string(string):
+    if len(string) < 2:
+        print('String too small')
+        return ''
+    else:
+        print(string[0:2]+string[-2:])
+string1 = input('Enter your string:')
+print_string(string1)
