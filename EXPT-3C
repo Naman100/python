@@ -1,0 +1,10 @@
+init= {'a':11,'b':12,'c':13,'d':14,'e':15,'f':12}
+
+result={}
+print('original dictonary is :\n',init)
+for key,value in init.items():
+	if value not in result.values():
+		result[key]=value
+print('\nAfter Removing duplicate values')
+print(result)
+
