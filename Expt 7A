@@ -1,0 +1,28 @@
+class Car:
+	def __init__(self,carType,name, price):
+		self.type = carType
+		self.name = name
+		self.price = price
+
+car1 = Car("Red Convertible","Fer","$60000.00")
+car2 = Car("Blue Van","Jump","$10000.00")
+
+print("Info about car 1.")
+print("Car Type --> ",car1.type)
+print("Car Brand --> ",car1.name)
+print("Car Price --> ",car1.price)
+
+print("Info about car 2.")
+print("Car Type --> ",car2.type)
+print("Car Brand --> ",car2.name)
+print("Car Price --> ",car2.price)
+
+OUTPUT:
+Info about car 1.
+('Car Type --> ', 'Red Convertible')
+('Car Brand --> ', 'Fer')
+('Car Price --> ', '$60000.00')
+Info about car 2.
+('Car Type --> ', 'Blue Van')
+('Car Brand --> ', 'Jump')
+('Car Price --> ', '$10000.00')
