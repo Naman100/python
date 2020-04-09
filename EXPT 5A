@@ -1,0 +1,10 @@
+m =input("Enter m : ")
+for i in range(m):
+	print("n"*(i+1)),
+	if(i+1 != m):
+		print("+"),
+
+OUTPUT:
+lenovo@lenovo-ThinkCentre-M70e:~/Desktop$ python exp5a.py
+Enter m : 5
+n + nn + nnn + nnnn + nnnnn
