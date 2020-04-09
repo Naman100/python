@@ -1,0 +1,14 @@
+inputList = list(input("Enter your list : "))
+newList = []
+
+for data in inputList:
+	if data not in newList:
+		newList.append(data)
+
+print(newList)
+
+OUTPUT:
+lenovo@lenovo-ThinkCentre-M70e:~$ cd Desktop
+lenovo@lenovo-ThinkCentre-M70e:~/Desktop$ python exp6a.py
+Enter your list : ["MANGO","APPLE","APPLE","CHERRY"]
+['MANGO', 'APPLE', 'CHERRY']
