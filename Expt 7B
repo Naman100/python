@@ -1,0 +1,20 @@
+class Person:
+	def __init__(self,name,age,gender,qualification):
+		self.name = name
+		self.age = age
+		self.gender = gender
+		self.qualification = qualification
+
+person1 = Person("Gal Gadot", 38, "Female", "Phd in Political Works") 
+print(person1.name)
+print(person1.age)
+print(person1.gender)
+print(person1.qualification)
+
+OUTPUT :
+lenovo@lenovo-ThinkCentre-M70e:~$ cd Desktop
+lenovo@lenovo-ThinkCentre-M70e:~/Desktop$ python yu.py 
+Gal Gadot
+38
+Female
+Phd in Political Works
