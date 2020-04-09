@@ -1,0 +1,64 @@
+class Class_A():
+	def __init__(self):
+		print('I am student of Class_A')
+
+class Class_B():
+	def __init__(self):
+		print('I am student of Class_B')
+
+class Student_A(Class_A):
+	def __init__(self,name):
+		self.name = name
+		print('My name is {}'.format(self.name))
+		
+	def sub(self,sub_list):
+		Class_A.__init__(self)
+		print('I have Opted for')
+		for sub_name in sub_list:
+			print(sub_name,end=' ')
+		print('\n')
+
+
+class Student_B(Class_B):
+	def __init__(self,name):
+		self.name = name
+		print('My name is {}'.format(self.name))
+	
+	def sub(self,sub_list):
+		Class_B.__init__(self)
+		print('I have Opted for')
+		for sub_name in sub_list:
+			print(sub_name,end=' ')
+		print('\n')
+
+std_A = input('Enter a name of student of class A: ')
+sub1 = input("Enter list of subjects of {}: ".format(std_A)).split()
+
+std_B = input('Enter a name of student of class B: ')
+sub2 = input("Enter list of subjects of {}: ".format(std_B)).split()
+
+x = Student_A(std_A)  # Object of class
+x.sub(sub1)
+
+y = Student_B(std_B)  # Object of class
+y.sub(sub2)
+
+
+OUTPUT ::
+
+C:\Users\Admin>cd Desktop\naman
+
+C:\Users\Admin\Desktop\naman>python Exp_8.py
+Enter a name of student of class A: Akshay
+Enter list of subjects of Akshay : Maths English Physics
+Enter a name of student of class B: Ketan
+Enter list of subjects of Ketan: Chemistry Hindi Biology
+My name is Akshay
+I am student of Class_A
+I have Opted for
+Maths English Physics
+
+My name is Ketan
+I am student of Class_B
+I have Opted for
+Chemistry Hindi Biology
