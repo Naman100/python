@@ -1,0 +1,27 @@
+print("EXCEPTION HANDLING\n")
+while  True:
+	try:
+		num = int(input('Enter a number: '))
+		break
+	except:
+		print('Sorry Wrong Input!!\nPlease Enter a Number\n')
+
+print('The number is: {}'.format(num))
+
+print('EXCEPTION  HANDLED')
+
+
+OUTPUT::
+
+C:\Users\Admin>cd Desktop\naman
+
+C:\Users\Admin\Desktop\naman>python Exp_9.py
+EXCEPTION HANDLING
+
+Enter a number: asq
+Sorry Wrong Input!!
+Please Enter a Number
+
+Enter a number: 12
+The number is: 12
+EXCEPTION  HANDLED
