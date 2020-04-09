@@ -1,0 +1,30 @@
+ 
+print('File Handling\n')
+#open or create a fie on same directory and write into it
+myfile = open('Abc.txt',mode='w')
+myfile.write('Hello World')
+#to read a file 
+myfile = open('Abc.txt') # default mode = 'r'
+print(myfile.read())
+#To append a new line to a file
+myfile = open('Abc.txt',mode='a')
+myfile.write('\nHie')
+#again read
+print('\nAfter Adding new line\n')
+myfile = open('Abc.txt') # default mode = 'r'
+print(myfile.read())
+
+
+OUTPUT::
+
+C:\Users\Admin>cd Desktop\naman
+
+C:\Users\Admin\Desktop\naman>python Exp_10.py
+File Handling
+
+Hello World
+
+After Adding new line
+
+Hello World
+Hie
