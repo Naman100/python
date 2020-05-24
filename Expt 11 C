@@ -1,0 +1,92 @@
+import sqlite3
+
+con=sqlite3.connect("mydb.db")
+con.execute(
+            '''
+create table products
+                (
+productidint,
+productname text,
+price float
+                )
+            '''
+            )
+print("Table created successfully!!!")
+
+def menu():
+	print("======MENU=======")
+	print("1. Add Product")
+	print("2. Delete Product")
+	print("3. Update Product")
+	print("4. Display Products")
+	print("5. Exit")
+	ch=int(input("Select one option:"))
+
+	if(ch==1):
+		def insert():
+			import sqlite3
+
+			productid=int(input("Enter product id:"))
+			productnm=input("Enter product name:")
+			productpr=float(input("Enter product price:"))
+
+			con=sqlite3.connect("mydb.db")
+			con.execute("insert into products values(?,?,?)",(productid,productnm,productpr))
+			con.commit()
+
+			print("Product Inserted successfully!!!")
+
+		insert()
+		menu()
+
+	elif(ch==2):
+		def delete():
+			import sqlite3
+
+			productid=int(input("Enter product id:"))
+			con=sqlite3.connect("mydb.db")
+
+			con.execute("delete from products where productid=?",(productid,))
+			con.commit()
+			print("Product deleted successfully!!!")
+
+		delete()
+		menu()
+
+	elif(ch==3):
+		def update():
+			import sqlite3
+
+			productid=int(input("Enter productid:"))
+			productnm=input("Enter new product name:")
+
+			con=sqlite3.connect("mydb.db")
+			con.execute("update products set productname=? where productid=?",(productnm,productid))
+			con.commit()
+
+			print("Product updated successfully!!")
+
+		update()
+		menu()
+
+
+	elif(ch==4):
+		def select():
+			import sqlite3
+
+			con=sqlite3.connect("mydb.db")
+			rows=con.execute("select * from products")
+
+			for row in rows:
+				print("Product id: ",row[0])
+				print("Product name: ",row[1])
+				print("Product price: ",row[2])
+				print()
+
+		select()
+		menu()
+
+	else:
+		break
+print("	MOBILE	STORE ")
+menu()
