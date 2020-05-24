@@ -1,0 +1,80 @@
+print("\nStudent Databse\n")
+def create():
+    import sqlite3
+    con=sqlite3.connect("Students.db")
+    con.execute(
+                  '''       
+                    create table stud
+                     (
+                        rollno int,
+                        name text,
+                        phone int,
+                        course text
+                     )
+                    ''' 
+                )
+
+    
+print("Student Table created!\n")
+create()
+
+def details():
+    print("-----------DETAILS----------")
+    print("1.Enter record")
+    print("2.Delete record")
+    print("3.View details")
+    print("4.Exit")
+    ch=int(input("Select one option:"))
+
+    if(ch==1):
+        def insert():
+            import sqlite3
+            rollno=int(input("Enter roll no :"))
+            name=input("Enter name :")
+            phone=int(input("Enter phone number :"))
+            course=input("Enter course :")
+
+            con=sqlite3.connect("Students.db")
+            con.execute("insert into stud values (?,?,?,?)",(rollno,name,phone,course))
+
+            print("Details entered successfully!")
+            con.commit()
+        insert()
+        details()
+
+    elif(ch==2):
+        def delete():
+            import sqlite3
+
+            rollno=int(input("Enter roll no :"))
+            con=sqlite3.connect("Students.db")
+            con.execute("delete from stud where rollno=?",(rollno,))
+            con.commit()
+            print("Record deleted successfully!")
+
+        delete()
+        details()
+
+    elif(ch==3):
+        def display():
+            import sqlite3
+            con=sqlite3.connect("Students.db")
+            rows=con.execute("select * from stud")
+            i=0
+            print("\n")
+            for row in rows:
+                i +=1
+                print("Student {} Details:".format(i))
+                print("Roll No :",row[0])
+                print("Name :",row[1])
+                print("Phone Number :",row[2])
+                print("Course :",row[3])
+                print("\n")
+    
+        display()
+        details()
+    elif(ch==4):
+        break
+     
+
+details()
